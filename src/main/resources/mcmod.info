@@ -1,0 +1,20 @@
+[
+  {
+    "modid": "ihas",
+    "name": "I Have A Suggestion",
+    "description": "",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Darkhax",
+      "TheCodedOne",
+      "Jriwanek"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
