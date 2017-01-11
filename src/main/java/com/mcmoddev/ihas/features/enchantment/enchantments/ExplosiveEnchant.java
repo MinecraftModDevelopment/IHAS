@@ -10,7 +10,7 @@ public class ExplosiveEnchant extends Enchantment {
     public static final ExplosiveEnchant ENCHANT = new ExplosiveEnchant();
 
     public ExplosiveEnchant () {
-        super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
+        super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
         setRegistryName(IHAS.MOD_ID, "explosive");
         setName("explosive");
     }

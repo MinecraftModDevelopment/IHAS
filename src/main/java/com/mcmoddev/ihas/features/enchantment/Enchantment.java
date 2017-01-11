@@ -12,7 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Set;
 
-@IHASFeature(featureID = "enchantment", name = "Enchantment", version = "1.0.0")
+@IHASFeature(featureID = "enchantment", name = "Enchantment", version = "1.0.0", description = "adds multiple enchantments", author = "The_CodedOne")
 public class Enchantment extends BlankIHasFeature {
 
     @SidedProxy(clientSide = "com.mcmoddev.ihas.features.enchantment.EnchantmentClientProxy", serverSide = "com.mcmoddev.ihas.features.enchantment.EnchantmentServerProxy")

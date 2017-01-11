@@ -10,7 +10,7 @@ public class WisdomEnchant extends Enchantment {
     public static final WisdomEnchant ENCHANT = new WisdomEnchant();
 
     public WisdomEnchant () {
-        super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
+        super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_HEAD, new EntityEquipmentSlot[]{EntityEquipmentSlot.HEAD});
         setRegistryName(IHAS.MOD_ID, "wisdom");
         setName("wisdom");
     }
