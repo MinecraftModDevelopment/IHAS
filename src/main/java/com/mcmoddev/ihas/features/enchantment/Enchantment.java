@@ -1,11 +1,12 @@
 package com.mcmoddev.ihas.features.enchantment;
 
 import com.google.common.collect.Sets;
+import com.mcmoddev.ihas.features.BlankIHasFeature;
+import com.mcmoddev.ihas.features.IHASFeature;
+import com.mcmoddev.ihas.features.IProxy;
 import com.mcmoddev.ihas.features.enchantment.enchantments.ExplosiveEnchant;
 import com.mcmoddev.ihas.features.enchantment.enchantments.WisdomEnchant;
-import com.mcmoddev.ihas.features.plugin.BlankIHasFeature;
-import com.mcmoddev.ihas.features.plugin.IHASFeature;
-import com.mcmoddev.ihas.features.plugin.IProxy;
+
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

@@ -1,6 +1,7 @@
 package com.mcmoddev.ihas.features.core;
 
-import com.mcmoddev.ihas.features.plugin.IProxy;
+import com.mcmoddev.ihas.features.IProxy;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

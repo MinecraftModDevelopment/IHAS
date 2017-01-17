@@ -1,8 +1,9 @@
 package com.mcmoddev.ihas.proxy;
 
-import com.mcmoddev.ihas.features.plugin.FeatureDeployment;
-import com.mcmoddev.ihas.features.plugin.IIHASFeature;
-import com.mcmoddev.ihas.features.plugin.IProxy;
+import com.mcmoddev.ihas.features.FeatureDeployment;
+import com.mcmoddev.ihas.features.IIHASFeature;
+import com.mcmoddev.ihas.features.IProxy;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

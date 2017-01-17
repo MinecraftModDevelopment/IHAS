@@ -1,8 +1,9 @@
 package com.mcmoddev.ihas;
 
 import com.google.common.base.Stopwatch;
-import com.mcmoddev.ihas.features.plugin.FeatureDeployment;
-import com.mcmoddev.ihas.features.plugin.IProxy;
+import com.mcmoddev.ihas.features.FeatureDeployment;
+import com.mcmoddev.ihas.features.IProxy;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
