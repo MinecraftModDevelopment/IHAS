@@ -1,6 +1,7 @@
 package com.mcmoddev.ihas.features.enchantment;
 
-import com.google.common.collect.Sets;
+import java.util.List;
+
 import com.mcmoddev.ihas.features.IHASFeature;
 import com.mcmoddev.ihas.features.IIHASFeature;
 import com.mcmoddev.ihas.features.enchantment.enchantments.ExplosiveEnchant;
@@ -14,8 +15,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import java.util.List;
 
 @IHASFeature(featureID = "enchantment", name = "Enchantment", version = "1.0.0")
 public class Enchantment implements IIHASFeature {

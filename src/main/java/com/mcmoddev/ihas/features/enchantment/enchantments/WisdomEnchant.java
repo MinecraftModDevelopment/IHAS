@@ -1,6 +1,7 @@
 package com.mcmoddev.ihas.features.enchantment.enchantments;
 
 import com.mcmoddev.ihas.IHAS;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;

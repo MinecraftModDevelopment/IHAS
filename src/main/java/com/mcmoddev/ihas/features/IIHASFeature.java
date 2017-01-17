@@ -1,10 +1,11 @@
 package com.mcmoddev.ihas.features;
 
+import java.util.Set;
+
 import com.google.common.collect.Sets;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.Set;
 
 public interface IIHASFeature {
 	
