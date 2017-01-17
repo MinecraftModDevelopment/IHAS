@@ -40,7 +40,7 @@ public class FeatureEnchantments implements IIHASFeature {
     public void onEntityLivingFall (LivingFallEvent event) {
         final EntityLivingBase entity = event.getEntityLiving();
         final float distance = event.getDistance();
-        if (entity instanceof EntityPlayer && distance > 5.0F && entity.isSneaking() && entity.getArmorInventoryList() instanceof List && !((List) entity.getArmorInventoryList()).isEmpty())
+        if (entity instanceof EntityPlayer && distance > 5.0F && entity.isSneaking() && entity.getArmorInventoryList() instanceof List && !((List<ItemStack>) entity.getArmorInventoryList()).isEmpty())
             for (final ItemStack stack : entity.getArmorInventoryList()) {
                 final int lvl = EnchantmentHelper.getEnchantmentLevel(EnchantmentExplosive.ENCHANT, stack);
                 if (stack != null && stack.getItem() instanceof ItemArmor && lvl > 0) {
