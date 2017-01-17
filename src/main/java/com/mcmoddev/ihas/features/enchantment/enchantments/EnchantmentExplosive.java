@@ -8,12 +8,13 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.util.ResourceLocation;
 
 public class EnchantmentExplosive extends Enchantment {
+
     public static final EnchantmentExplosive ENCHANT = new EnchantmentExplosive();
 
-    public EnchantmentExplosive () {
-        super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
-        setRegistryName(IHAS.MOD_ID, "explosive");
-        setName("explosive");
+    public EnchantmentExplosive() {
+        super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[] { EntityEquipmentSlot.FEET });
+        this.setRegistryName(IHAS.MOD_ID, "explosive");
+        this.setName("explosive");
     }
 
     public static void register () {

@@ -20,6 +20,7 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class FeatureDeployment {
+
     private enum Stage {
         PRE_SETUP,
         SETUP,
@@ -34,8 +35,11 @@ public class FeatureDeployment {
     }
 
     private static Set<IIHASFeature> LOADED = Sets.newHashSet();
+
     private static Set<IIHASFeature> UNLOADED = Sets.newHashSet();
+
     private static Set<IIHASFeature> CONF_DISABLED = Sets.newHashSet();
+
     private static Logger LOG = LogManager.getLogger(IHAS.MOD_NAME + "|Feature Deployment");
 
     private static Stage STAGE = Stage.PRE_SETUP;
@@ -54,8 +58,8 @@ public class FeatureDeployment {
         return STAGE;
     }
 
-    public static boolean isFeatureLoaded(String id) {
-        for (IIHASFeature feature : getLoadedFeatures())
+    public static boolean isFeatureLoaded (String id) {
+        for (final IIHASFeature feature : getLoadedFeatures())
             if (feature.getClass().getAnnotation(IHASFeature.class).featureID().equals(id))
                 return true;
         return false;
@@ -66,7 +70,7 @@ public class FeatureDeployment {
             return;
         STAGE = Stage.SETUP;
         CONF_DIR = event.getModConfigurationDirectory();
-        List<IIHASFeature> features = AnnotationChecker.getInstances(event.getAsmData(), IHASFeature.class, IIHASFeature.class);
+        final List<IIHASFeature> features = AnnotationChecker.getInstances(event.getAsmData(), IHASFeature.class, IIHASFeature.class);
         if (features.isEmpty())
             throw new NullPointerException();
         configure(features);
@@ -95,63 +99,55 @@ public class FeatureDeployment {
         STAGE = Stage.FINISHED;
     }
 
-
     private static void configure (List<IIHASFeature> features) {
-        Configuration config = new Configuration(new File(IHAS.CONFIG_DIR, "features.cfg"));
+        final Configuration config = new Configuration(new File(IHAS.CONFIG_DIR, "features.cfg"));
         config.load();
         config.setCategoryComment("features", "Disable certain features here");
-
-        Set<String> to = new HashSet<>();
-
-        ImmutableList<IIHASFeature> allFeatures = ImmutableList.copyOf(features);
-
+        final Set<String> to = new HashSet<>();
+        final ImmutableList<IIHASFeature> allFeatures = ImmutableList.copyOf(features);
         Iterator<IIHASFeature> iterator = features.iterator();
         while (iterator.hasNext()) {
-            IIHASFeature feature = iterator.next();
-            if (feature.canBeDisabled()) {
+            final IIHASFeature feature = iterator.next();
+            if (feature.canBeDisabled())
                 if (!isEnabled(config, feature)) {
                     iterator.remove();
                     LOG.info("Feature disabled: {}", feature);
                     continue;
                 }
-            }
-            IHASFeature annotation = feature.getClass().getAnnotation(IHASFeature.class);
+            final IHASFeature annotation = feature.getClass().getAnnotation(IHASFeature.class);
             to.add(annotation.featureID());
         }
-
         boolean changed;
         do {
             changed = false;
             iterator = features.iterator();
             while (iterator.hasNext()) {
-                IIHASFeature feature = iterator.next();
-                Set<String> dependencies = feature.getDependIds();
+                final IIHASFeature feature = iterator.next();
+                final Set<String> dependencies = feature.getDependIds();
                 if (dependencies != null && !dependencies.isEmpty() && !to.containsAll(dependencies)) {
                     iterator.remove();
                     changed = true;
-                    IHASFeature annotation = feature.getClass().getAnnotation(IHASFeature.class);
-                    String featureId = annotation.featureID();
+                    final IHASFeature annotation = feature.getClass().getAnnotation(IHASFeature.class);
+                    final String featureId = annotation.featureID();
                     to.remove(featureId);
                     LOG.warn("Feature {} is missing dependencies: {}", featureId, dependencies);
                 }
             }
-        } while (changed);
-
+        }
+        while (changed);
         LOADED.addAll(features);
         LOADED.forEach(feature -> LOG.info("Feature active: {}", feature.getClass().getAnnotation(IHASFeature.class).featureID()));
         UNLOADED.addAll(allFeatures);
         UNLOADED.removeAll(features);
-        if (config.hasChanged()) config.save();
-
+        if (config.hasChanged())
+            config.save();
     }
 
     private static boolean isEnabled (Configuration config, IIHASFeature feature) {
-        IHASFeature annotation = feature.getClass().getAnnotation(IHASFeature.class);
-
-        boolean enabled = config.get("features", annotation.featureID(), true, annotation.description()).getBoolean();
-
-        if (!enabled) CONF_DISABLED.add(feature);
-
+        final IHASFeature annotation = feature.getClass().getAnnotation(IHASFeature.class);
+        final boolean enabled = config.get("features", annotation.featureID(), true, annotation.description()).getBoolean();
+        if (!enabled)
+            CONF_DISABLED.add(feature);
         return enabled;
     }
 }

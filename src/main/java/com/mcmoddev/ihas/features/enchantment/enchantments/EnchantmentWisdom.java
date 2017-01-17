@@ -8,12 +8,13 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.util.ResourceLocation;
 
 public class EnchantmentWisdom extends Enchantment {
+
     public static final EnchantmentWisdom ENCHANT = new EnchantmentWisdom();
 
-    public EnchantmentWisdom () {
-        super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
-        setRegistryName(IHAS.MOD_ID, "wisdom");
-        setName("wisdom");
+    public EnchantmentWisdom() {
+        super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[] { EntityEquipmentSlot.FEET });
+        this.setRegistryName(IHAS.MOD_ID, "wisdom");
+        this.setName("wisdom");
     }
 
     public static void register () {

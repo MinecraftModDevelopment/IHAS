@@ -7,7 +7,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class ProxyClient implements IProxy {
-	
+
     @Override
     public void preInit () {
         FeatureDeployment.getLoadedFeatures().forEach(iihasFeature -> iihasFeature.clientPreInit());

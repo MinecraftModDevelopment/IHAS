@@ -5,6 +5,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.SERVER)
 public class ProxyServer implements IProxy {
+
     @Override
     public void preInit () {
     }

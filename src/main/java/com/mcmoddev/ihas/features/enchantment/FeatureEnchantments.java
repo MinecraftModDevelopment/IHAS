@@ -25,12 +25,11 @@ public class FeatureEnchantments implements IIHASFeature {
         EnchantmentWisdom.register();
     }
 
-	@Override
-	public boolean hasEvents() {
-		
-		return true;
-	}
-	
+    @Override
+    public boolean hasEvents () {
+        return true;
+    }
+
     @SubscribeEvent
     public void onExperienceDrop (LivingExperienceDropEvent event) {
         event.setDroppedExperience((int) (event.getOriginalExperience() + event.getOriginalExperience() * 0.15 * EnchantmentHelper.getEnchantmentLevel(EnchantmentWisdom.ENCHANT, event.getAttackingPlayer().getHeldItemMainhand())));
@@ -38,13 +37,13 @@ public class FeatureEnchantments implements IIHASFeature {
 
     @SubscribeEvent
     public void onEntityLivingFall (LivingFallEvent event) {
-        EntityLivingBase entity = event.getEntityLiving();
-        float distance = event.getDistance();
+        final EntityLivingBase entity = event.getEntityLiving();
+        final float distance = event.getDistance();
         if (entity instanceof EntityPlayer && distance > 5.0F && entity.isSneaking() && entity.getArmorInventoryList() instanceof List && !((List) entity.getArmorInventoryList()).isEmpty())
-            for (ItemStack stack : entity.getArmorInventoryList()) {
-                int lvl = EnchantmentHelper.getEnchantmentLevel(EnchantmentExplosive.ENCHANT, stack);
+            for (final ItemStack stack : entity.getArmorInventoryList()) {
+                final int lvl = EnchantmentHelper.getEnchantmentLevel(EnchantmentExplosive.ENCHANT, stack);
                 if (stack != null && stack.getItem() instanceof ItemArmor && lvl > 0) {
-                    float h = entity.getHealth();
+                    final float h = entity.getHealth();
                     entity.getEntityWorld().createExplosion(entity, entity.posX, entity.posY, entity.posZ, Math.min(distance / (8F / lvl), 5.0F), true);
                     entity.setHealth(h);
                 }
