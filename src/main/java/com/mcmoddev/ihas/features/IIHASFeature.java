@@ -16,20 +16,35 @@ public interface IIHASFeature {
         return Sets.newHashSet("core");
     }
 
-    void preInit ();
+    default void preInit () {
+    	
+    }
 
-    void init ();
+    default void init () {
+    	
+    }
 
-    void postInit ();
+    default void postInit () {
+    	
+    }
     
     @SideOnly(Side.CLIENT)
-    void clientPreInit ();
+    default void clientPreInit () {
+    	
+    }
 
     @SideOnly(Side.CLIENT)
-    void clientInit ();
+    default void clientInit () {
+    	
+    }
 
     @SideOnly(Side.CLIENT)
-    void clientPostInit ();
+    default void clientPostInit () {
+    	
+    }
     
-    boolean hasEvents();
+    default boolean hasEvents() {
+    	
+    	return false;
+    }
 }

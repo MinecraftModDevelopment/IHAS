@@ -1,8 +1,8 @@
 package com.mcmoddev.ihas.features.enchantment;
 
 import com.google.common.collect.Sets;
-import com.mcmoddev.ihas.features.BlankIHasFeature;
 import com.mcmoddev.ihas.features.IHASFeature;
+import com.mcmoddev.ihas.features.IIHASFeature;
 import com.mcmoddev.ihas.features.enchantment.enchantments.ExplosiveEnchant;
 import com.mcmoddev.ihas.features.enchantment.enchantments.WisdomEnchant;
 
@@ -16,35 +16,14 @@ import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.List;
-import java.util.Set;
 
 @IHASFeature(featureID = "enchantment", name = "Enchantment", version = "1.0.0")
-public class Enchantment extends BlankIHasFeature {
-
-    @Override
-    public Set<String> getDependIds () {
-        return Sets.newHashSet("core");
-    }
-
-    @Override
-    public boolean canBeDisabled () {
-        return true;
-    }
+public class Enchantment implements IIHASFeature {
 
     @Override
     public void preInit () {
         ExplosiveEnchant.register();
         WisdomEnchant.register();
-    }
-
-    @Override
-    public void init () {
-        super.init();
-    }
-
-    @Override
-    public void postInit () {
-        super.postInit();
     }
 
 	@Override
