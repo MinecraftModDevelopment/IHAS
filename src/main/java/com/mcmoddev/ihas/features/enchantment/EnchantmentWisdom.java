@@ -17,7 +17,6 @@ public class EnchantmentWisdom extends Enchantment {
     public int getMaxLevel () {
         return 4;
     }
-    
 
     @SubscribeEvent
     public void onExperienceDrop (LivingExperienceDropEvent event) {

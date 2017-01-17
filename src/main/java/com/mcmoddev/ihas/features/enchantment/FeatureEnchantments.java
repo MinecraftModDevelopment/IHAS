@@ -12,24 +12,21 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class FeatureEnchantments implements IIHASFeature {
 
     public static Enchantment explosive;
+
     public static Enchantment wisdom;
-    
+
     @Override
     public void preInit () {
-        
-        explosive = registerEnchantment(new EnchantmentExplosive(), "explosive", true);
-        wisdom = registerEnchantment(new EnchantmentWisdom(), "wisdom", true);
+        explosive = this.registerEnchantment(new EnchantmentExplosive(), "explosive", true);
+        wisdom = this.registerEnchantment(new EnchantmentWisdom(), "wisdom", true);
     }
-    
-    public Enchantment registerEnchantment(Enchantment enchantment, String name, boolean usesEvents) {
-        
+
+    public Enchantment registerEnchantment (Enchantment enchantment, String name, boolean usesEvents) {
         enchantment.setRegistryName(IHAS.MOD_ID, name);
         enchantment.setName(IHAS.MOD_ID + "." + name);
         GameRegistry.register(enchantment);
-        
         if (usesEvents)
             MinecraftForge.EVENT_BUS.register(enchantment);
-        
         return enchantment;
     }
 }

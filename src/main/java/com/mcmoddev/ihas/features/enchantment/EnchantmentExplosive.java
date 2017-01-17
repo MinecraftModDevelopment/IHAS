@@ -23,7 +23,7 @@ public class EnchantmentExplosive extends Enchantment {
     public int getMaxLevel () {
         return 2;
     }
-    
+
     @SubscribeEvent
     public void onEntityLivingFall (LivingFallEvent event) {
         final EntityLivingBase entity = event.getEntityLiving();
