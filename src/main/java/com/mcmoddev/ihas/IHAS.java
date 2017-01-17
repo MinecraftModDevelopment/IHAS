@@ -2,11 +2,9 @@ package com.mcmoddev.ihas;
 
 import com.google.common.base.Stopwatch;
 import com.mcmoddev.ihas.features.FeatureDeployment;
-import com.mcmoddev.ihas.features.IProxy;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -30,16 +28,12 @@ public class IHAS {
 
     public static File CONFIG_DIR;
 
-    @SidedProxy(clientSide = "com.mcmoddev.ihas.proxy.ClientProxy", serverSide = "com.mcmoddev.ihas.proxy.ServerProxy")
-    public static IProxy PROXY;
-
     @EventHandler
     public void preInit (FMLPreInitializationEvent event) {
         final Stopwatch stopwatch = Stopwatch.createStarted();
         LOG.info("Pre Initialization (Started)");
         CONFIG_DIR = new File(event.getModConfigurationDirectory(), MOD_ID);
         FeatureDeployment.preInit(event);
-        PROXY.preInit();
         LOG.info("Pre Initialization (Ended after " + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "ms)");
         stopwatch.stop();
     }
@@ -49,7 +43,6 @@ public class IHAS {
         final Stopwatch stopwatch = Stopwatch.createStarted();
         LOG.info("Initialization (Started)");
         FeatureDeployment.init();
-        PROXY.init();
         LOG.info("Initialization (Ended after " + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "ms)");
         stopwatch.stop();
     }
@@ -59,7 +52,6 @@ public class IHAS {
         final Stopwatch stopwatch = Stopwatch.createStarted();
         LOG.info("Post Initialization (Started)");
         FeatureDeployment.postInit();
-        PROXY.postInit();
         LOG.info("Post Initialization (Ended after " + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "ms)");
         stopwatch.stop();
     }

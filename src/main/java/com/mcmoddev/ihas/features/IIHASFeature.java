@@ -21,8 +21,15 @@ public interface IIHASFeature {
     void init ();
 
     void postInit ();
+    
+    @SideOnly(Side.CLIENT)
+    void clientPreInit ();
 
-    IProxy getProxy ();
+    @SideOnly(Side.CLIENT)
+    void clientInit ();
+
+    @SideOnly(Side.CLIENT)
+    void clientPostInit ();
     
     boolean hasEvents();
 }

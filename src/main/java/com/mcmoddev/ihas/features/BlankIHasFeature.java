@@ -5,6 +5,7 @@ import com.google.common.collect.Sets;
 import java.util.Set;
 
 public abstract class BlankIHasFeature implements IIHASFeature {
+	
     @Override
     public boolean canBeDisabled () {
         return true;
@@ -35,4 +36,16 @@ public abstract class BlankIHasFeature implements IIHASFeature {
 		
 		return false;
 	}
+	
+    public void clientPreInit () {
+    	
+    }
+
+    public void clientInit () {
+    	
+    }
+
+    public void clientPostInit () {
+    	
+    }
 }
