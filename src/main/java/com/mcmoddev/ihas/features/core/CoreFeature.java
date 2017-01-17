@@ -32,5 +32,4 @@ public class CoreFeature extends BlankIHasFeature {
     public IProxy getProxy () {
         return PROXY;
     }
-
 }

@@ -30,11 +30,9 @@ public abstract class BlankIHasFeature implements IIHASFeature {
 
     }
 
-    @Override
-    public abstract IProxy getProxy ();
-
-    @Override
-    public Object getEventHandler () {
-        return null;
-    }
+	@Override
+	public boolean hasEvents() {
+		
+		return false;
+	}
 }

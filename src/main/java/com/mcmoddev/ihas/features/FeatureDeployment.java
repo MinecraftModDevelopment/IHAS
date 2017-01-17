@@ -73,8 +73,8 @@ public class FeatureDeployment {
         STAGE = Stage.PRE_INIT;
         LOADED.forEach(IIHASFeature::preInit);
         LOADED.forEach(feature -> {
-            if (feature.getEventHandler() != null)
-                MinecraftForge.EVENT_BUS.register(feature.getEventHandler());
+            if (feature.hasEvents())
+                MinecraftForge.EVENT_BUS.register(feature);
         });
     }
 

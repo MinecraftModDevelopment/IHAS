@@ -7,6 +7,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Set;
 
 public interface IIHASFeature {
+	
     default boolean canBeDisabled () {
         return true;
     }
@@ -22,6 +23,6 @@ public interface IIHASFeature {
     void postInit ();
 
     IProxy getProxy ();
-
-    Object getEventHandler ();
+    
+    boolean hasEvents();
 }
