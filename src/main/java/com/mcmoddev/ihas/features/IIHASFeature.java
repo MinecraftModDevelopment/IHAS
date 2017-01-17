@@ -48,4 +48,8 @@ public interface IIHASFeature {
 
     default void setupConfiguration (Configuration config) {
     }
+
+    default boolean enabledByDefault () {
+        return true;
+    }
 }
