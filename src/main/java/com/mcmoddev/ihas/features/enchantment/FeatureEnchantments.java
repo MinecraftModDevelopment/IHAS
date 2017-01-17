@@ -15,14 +15,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @IHASFeature(featureID = "enchantment", name = "Enchantment", version = "1.0.0")
 public class FeatureEnchantments implements IIHASFeature {
 
     @Override
     public void preInit () {
-        EnchantmentExplosive.register();
-        EnchantmentWisdom.register();
+        GameRegistry.register(EnchantmentExplosive.ENCHANT);
+        GameRegistry.register(EnchantmentWisdom.ENCHANT);
     }
 
     @Override

@@ -5,7 +5,6 @@ import com.mcmoddev.ihas.IHAS;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.util.ResourceLocation;
 
 public class EnchantmentExplosive extends Enchantment {
 
@@ -15,11 +14,6 @@ public class EnchantmentExplosive extends Enchantment {
         super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[] { EntityEquipmentSlot.FEET });
         this.setRegistryName(IHAS.MOD_ID, "explosive");
         this.setName("explosive");
-    }
-
-    public static void register () {
-        int i = Enchantment.REGISTRY.getKeys().size();
-        Enchantment.REGISTRY.register(++i, new ResourceLocation(IHAS.MOD_ID, "explosive"), ENCHANT);
     }
 
     @Override
