@@ -7,7 +7,7 @@ import com.mcmoddev.ihas.features.IHASFeature;
 import com.mcmoddev.ihas.features.IIHASFeature;
 
 @IHASFeature(featureID = "core", name = "Core", version = "1.0.0")
-public class CoreFeature implements IIHASFeature {
+public class FeatureCore implements IIHASFeature {
 
     @Override
     public Set<String> getDependIds () {

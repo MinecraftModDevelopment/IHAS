@@ -7,10 +7,10 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.util.ResourceLocation;
 
-public class ExplosiveEnchant extends Enchantment {
-    public static final ExplosiveEnchant ENCHANT = new ExplosiveEnchant();
+public class EnchantmentExplosive extends Enchantment {
+    public static final EnchantmentExplosive ENCHANT = new EnchantmentExplosive();
 
-    public ExplosiveEnchant () {
+    public EnchantmentExplosive () {
         super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
         setRegistryName(IHAS.MOD_ID, "explosive");
         setName("explosive");
