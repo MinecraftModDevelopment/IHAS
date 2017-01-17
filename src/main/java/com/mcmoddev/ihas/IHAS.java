@@ -39,6 +39,7 @@ public class IHAS {
         LOG.info("Pre Initialization (Started)");
         CONFIG_DIR = new File(event.getModConfigurationDirectory(), MOD_ID);
         FeatureDeployment.preInit(event);
+        FeatureDeployment.getLoadedFeatures().forEach(iihasFeature -> iihasFeature.setupRecipes());
         proxy.preInit();
         LOG.info("Pre Initialization (Ended after " + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "ms)");
         stopwatch.stop();

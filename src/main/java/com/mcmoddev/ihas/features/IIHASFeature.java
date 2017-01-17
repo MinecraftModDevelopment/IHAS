@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -40,5 +41,11 @@ public interface IIHASFeature {
 
     default boolean hasEvents () {
         return false;
+    }
+
+    default void setupRecipes () {
+    }
+
+    default void setupConfiguration (Configuration config) {
     }
 }
