@@ -23,7 +23,7 @@ group = "com.mcmoddev"
 archivesBaseName = "ihas"
 
 minecraft {
-    version = "1.10.2-12.18.3.2202"
+    version = "1.10.2-12.18.3.2185"
     runDir = "run"
     useDepAts=true
     mappings = "stable_29"
